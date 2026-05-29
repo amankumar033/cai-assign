@@ -1,0 +1,64 @@
+/* Design tokens + shared UI classes */
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #4f46e5;
+  --color-brand-hover: #4338ca;
+  --color-brand-muted: #eef2ff;
+  --color-page: #f4f4f5;
+  --color-surface: #ffffff;
+  --color-border: #e4e4e7;
+  --color-muted: #71717a;
+  --color-body: #52525b;
+  --color-heading: #18181b;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: var(--color-body);
+  background-color: var(--color-page);
+}
+
+@layer components {
+  .btn-primary {
+    @apply cursor-pointer rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-indigo-700;
+  }
+
+  .btn-secondary {
+    @apply cursor-pointer rounded-md border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-400 hover:bg-zinc-50;
+  }
+
+  .btn-outline {
+    @apply cursor-pointer rounded-md border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm font-medium text-indigo-700 transition-colors hover:bg-indigo-100;
+  }
+
+  .btn-link {
+    @apply cursor-pointer text-sm font-medium text-indigo-600 underline-offset-2 transition-colors hover:text-indigo-800 hover:underline;
+  }
+
+  .card {
+    @apply overflow-hidden rounded-xl border border-zinc-200/80 bg-white shadow-sm ring-1 ring-zinc-950/5;
+  }
+
+  .card-header {
+    @apply border-b border-zinc-100 bg-gradient-to-r from-zinc-50 to-indigo-50/30 px-5 py-4 sm:px-6;
+  }
+
+  .section-title {
+    @apply text-base font-semibold text-zinc-800;
+  }
+
+  .section-desc {
+    @apply mt-0.5 text-sm text-zinc-500;
+  }
+
+  .page-container {
+    @apply mx-auto w-full max-w-[1600px];
+  }
+
+  .page-main {
+    @apply mx-auto w-full flex-1 px-4 pb-6 pt-[4.75rem] sm:px-6 sm:pb-8 sm:pt-20 lg:px-20;
+  }
+}
